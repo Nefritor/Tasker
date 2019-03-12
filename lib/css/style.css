@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans",
+    "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.content-body {
+    margin: 10px;
+}
+
+table.dataTable tbody tr.selected {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.dt-button {
+    color: #6c757d;
+    cursor: auto;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    padding: .5rem .75rem;
+    border-radius: .25rem;
+}
+
+.dt-button:hover {
+    background-color: #e9ecef;
+}
+
