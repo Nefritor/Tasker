@@ -12,6 +12,15 @@
         <label for="formDescription">Описание</label>
         <textarea class="form-control" id="formDescription"></textarea>
     </div>
+    <div class="form-group">
+        <label for="formDescription">Дата и время</label>
+        <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" id="formDateTime"/>
+            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+            </div>
+        </div>
+    </div>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirmModal">Сохранить</button>
 
     <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

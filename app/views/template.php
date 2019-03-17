@@ -6,6 +6,7 @@
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- Bootstrap css -->
+    <link rel="stylesheet" href="/lib/css/tempusdominus.css" />
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
     <!-- jQuery -->
     <script src="/lib/js/jquery-3.3.1.min.js" type="text/javascript"></script>
@@ -29,6 +30,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/addtask">Создать задачу</a>
+                </li>
+                <li class="nav-item">
+                   <?php echo !empty($_SESSION) ? '<a class="nav-link" href="/notifications">Уведомления</a>' : '' ?>
                 </li>
             </ul>
             <ul class="navbar-nav">
@@ -80,8 +84,11 @@
         <?php include 'app/views/'.$content_view; ?>
     </div>
 
+    <!-- Moment js -->
+    <script src="/lib/moment.js" type="text/javascript"></script>
     <!-- Bootstrap js -->
     <script src="/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
     <!-- Datatables js -->
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
