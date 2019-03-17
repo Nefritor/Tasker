@@ -1,21 +1,23 @@
 <form>
-    <input type="hidden" id="formId" value="<?= $data['id'] ?>">
+    <input type="hidden" id="formId" value="<?= $data[0]['id'] ?>">
     <div class="form-group">
-        <label>Пользователь: <b><?= $data['username'] ?></b></label>
+        <label>Пользователь: <b><?= $data[0]['username'] ?></b></label>
     </div>
     <div class="form-group">
-        <label>Электорнная почта: <b><?= $data['email'] ?></b></label>
+        <label>Электорнная почта: <b><?= $data[0]['email'] ?></b></label>
     </div>
     <div class="form-group">
         <label for="formDescription">Описание</label>
-        <textarea class="form-control" id="formDescription"><?= $data['description'] ?></textarea>
+        <textarea class="form-control" id="formDescription"><?= $data[0]['description'] ?></textarea>
     </div>
     <div class="form-group">
-        <label for="formStatus">Статус</label>
-        <select class="form-control" id="formStatus">
-            <option <?= $data['status'] ? selected : '' ?> value=true>Выполнено</option>
-            <option <?= $data['status'] ? '' : selected ?> value=false>Не выполнено</option>
-        </select>
+        <label for="formDateTime">Дата и время</label>
+        <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" id="formDateTime" value="<?= $data[0]['datetime'] ?>"/>
+            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+            </div>
+        </div>
     </div>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirmModal">Сохранить</button>
 

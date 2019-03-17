@@ -26,3 +26,6 @@ table.dataTable tbody tr.selected {
     background-color: #e9ecef;
 }
 
+#datetimepicker1 {
+    width: 230px
+}

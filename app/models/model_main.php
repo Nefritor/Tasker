@@ -2,79 +2,40 @@
 class Model_Main extends Model
 {
     public function get_table_data() {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "nefritor";
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        $sql = "SELECT * FROM tasks";
-        $result = $conn->query($sql);
-        $data = array();
-
-        if ($result->num_rows > 0) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-                array_push($data, $row);
-            }
-        }
+        $database = new Database();
+        $data = $database->query("SELECT * FROM tasks", false);
         return $data;
-
-        $conn->close();
     }
 
     public function get_task_data($id) {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "nefritor";
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        $sql = "SELECT * FROM tasks where id = $id";
-        $result = $conn->query($sql);
-        $data = array();
-
-        if ($result->num_rows > 0) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-                $data = $row;
-            }
-        }
+        $database = new Database();
+        $data = $database->query("SELECT * FROM tasks where id = $id", false);
         return $data;
-
-        $conn->close();
     }
 
     public function set_task_data($data) {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "nefritor";
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-            return 'fault';
-        } else {
-            $sql = "
+        $database = new Database();
+        $result = $database->query( "
             UPDATE tasks 
-            SET description = '".$data['desc']."', status = ".$data['status']."
-            where id = ".$data['id'];
-            $result = $conn->query($sql);
-            return 'success';
-        }
+            SET description = '".addslashes($data['desc'])."', datetime = '".$data['datetime']."'
+            where id = ".$data['id'], true);
+        return $result;
+    }
 
-        $conn->close();
+    public function set_notification($data) {
+        $database = new Database();
+        session_start();
+        $result = $database->query( "SELECT * FROM notifications where user_id = '".$_SESSION['user_id']."' and task_id = '".$data['taskid']."'", false);
+        if (empty($result)) {
+            $result = $database->query( "
+            INSERT INTO notifications (user_id, task_id, is_visible)
+            values (".$_SESSION['user_id'].", ".$data['taskid'].", 1)", true);
+        } else if ($result[0]['is_visible'] == false) {
+            $result = $database->query( "
+            UPDATE notifications 
+            SET is_visible = 1
+            where user_id = ".$_SESSION['user_id']." and task_id = ".$data['taskid'], true);
+        } else return -1;
+        return $result;
     }
 }

@@ -20,4 +20,14 @@ class Controller_Main extends Controller
         $response = $this->model->set_task_data($data);
         echo $response;
     }
+
+    function action_set_notification($data) {
+        $response = $this->model->set_notification($data);
+        echo $response;
+    }
+
+    function action_get_subscriptions() {
+        $response = $this->model->get_subscriptions();
+        echo $response;
+    }
 }
