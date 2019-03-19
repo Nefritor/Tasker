@@ -34,6 +34,9 @@
                 <li class="nav-item">
                    <?php echo !empty($_SESSION) ? '<a class="nav-link" href="/notifications">Уведомления</a>' : '' ?>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/test">Тестовая страница</a>
+                </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
@@ -87,7 +90,7 @@
     <!-- Moment js -->
     <script src="/lib/moment.js" type="text/javascript"></script>
     <!-- Bootstrap js -->
-    <script src="/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/lib/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
     <!-- Datatables js -->
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
