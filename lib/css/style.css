@@ -29,3 +29,50 @@ table.dataTable tbody tr.selected {
 #datetimepicker1 {
     width: 230px
 }
+
+.invalid {
+    background-color: var(--danger);
+}
+.invalid:hover {
+    background-color: var(--red);
+}
+
+.transition-500 {
+    transition: all .5s ease;
+}
+
+.opacity-0 {
+    opacity: 0
+}
+
+.common {
+    background-color: #dedede;
+}
+
+.legendary {
+    background-color: #bd55b5;
+}
+
+.cards-layout {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hero-card {
+    flex: 0 1 275px;
+    margin: 10px;
+}
+
+.hero-list {
+    position: absolute;
+}
+
+.hero-list-container {
+    overflow: auto;
+}
+
+.hero-img {
+    height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

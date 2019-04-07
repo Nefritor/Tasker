@@ -387,4 +387,77 @@
         </div>
         <br/>
     </div>
+    <h3 class="my-5">Лабораторная работа №2</h3>
+    <div class="container-fluid border rounded">
+        <br/>
+        <div class="row">
+            <div class="col-6">
+                <div class="container">
+                    <div class="input-group mb-3 char-name">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Имя</span>
+                        </div>
+                        <input type="text" class="form-control transition-500" id="char-name">
+                    </div>
+                    <div class="input-group mb-3 char-race">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text transition-500" for="char-race">Раса</label>
+                        </div>
+                        <select class="custom-select transition-500" id="char-race">
+                            <option selected value="">Выберите...</option>
+                            <option value="human">Человек</option>
+                            <option value="ork">Орк</option>
+                            <option value="dwarf">Гном</option>
+                            <option value="troll">Тролль</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 char-gender">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="char-gender">Пол</label>
+                        </div>
+                        <select class="custom-select transition-500" id="char-gender">
+                            <option selected value="">Выберите...</option>
+                            <option value="male">Мужской</option>
+                            <option value="female">Женский</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 char-type">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="char-type">Тип</label>
+                        </div>
+                        <select class="custom-select transition-500" id="char-type">
+                            <option selected value="">Выберите...</option>
+                            <option value="warrior">Воин</option>
+                            <option value="archer">Лучник</option>
+                            <option value="mage">Маг</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3 char-level">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Уровень</span>
+                        </div>
+                        <input type="text" class="form-control transition-500" id="char-level">
+                    </div>
+                    <div class="input-group mb-3 char-islegen">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="char-islegen">
+                            <label class="form-check-label" for="char-islegen">
+                                Легендарный
+                            </label>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary add-char">Добавить</button>
+                </div>
+                <br/>
+            </div>
+            <div class="col-6 hero-list-container">
+                <div class="hero-list">
+                    <h4>Список героев:</h4>
+                </div>
+            </div>
+        </div>
+        <div class="cards-layout">
+
+        </div>
+    </div>
 </div>
